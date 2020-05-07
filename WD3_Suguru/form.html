@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Form</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/form.css">
+        <script src="js/form.js"></script>
+    </head>
+    <body>
+        <div class="help-video">
+            <a href="#" id="help">help</a>
+            <video width="400" height="400" controls>
+                <source src="sample.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div style="text-align:center;">
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 155 155"><defs><style>.cls-1{fill:red;}.cls-2{fill:#c9c9c9;}.cls-3{fill:#1010ff;}</style></defs><circle class="cls-1" cx="77.5" cy="77.5" r="77"/><path d="M296.5,137A76.5,76.5,0,1,1,220,213.5,76.6,76.6,0,0,1,296.5,137m0-1A77.5,77.5,0,1,0,374,213.5,77.5,77.5,0,0,0,296.5,136Z" transform="translate(-219 -136)"/><circle class="cls-2" cx="78" cy="77" r="66.5"/><path d="M297,147a66,66,0,1,1-66,66,66.1,66.1,0,0,1,66-66m0-1a67,67,0,1,0,67,67,67,67,0,0,0-67-67Z" transform="translate(-219 -136)"/><circle class="cls-1" cx="78" cy="76" r="51.5"/><path d="M297,161a51,51,0,1,1-51,51,51.1,51.1,0,0,1,51-51m0-1a52,52,0,1,0,52,52,52,52,0,0,0-52-52Z" transform="translate(-219 -136)"/><circle class="cls-3" cx="78" cy="76" r="38.5"/><path d="M297,174a38,38,0,1,1-38,38,38,38,0,0,1,38-38m0-1a39,39,0,1,0,39,39,39.1,39.1,0,0,0-39-39Z" transform="translate(-219 -136)"/><polygon class="cls-2" points="62.2 82.1 47 67.2 68 64.2 77.4 45.1 86.9 64.2 107.9 67.2 92.7 82.1 96.3 103.1 77.4 93.2 58.6 103.1 62.2 82.1"/><path d="M296.4,182.2l8.9,17.9.2.5h.5l19.9,2.9-14.4,13.9-.4.4v.5l3.4,19.7-17.7-9.3-.5-.2-.4.2-17.7,9.3,3.3-19.7v-.5l-.3-.4L267,203.6l19.8-2.9h.6l.2-.5,8.8-17.9m0-2.3-9.7,19.8-21.8,3.2,15.8,15.4L276.9,240l19.5-10.3L315.9,240l-3.7-21.7L328,202.9l-21.8-3.2-9.8-19.8Z" transform="translate(-219 -136)"/></svg>
+        </div>
+        <form action="#" method="POST">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label id="fname" for="firstname">First Name:</label>
+                <div class="input-container">
+                    <i class="fas fa-signature icon"></i>
+                    <input type="text" class="input-field" id="firstname" pattern="[A-Za-z]{2,}" maxlength="20" title="Insert your first name" onblur="errorDisplay()" required>
+                </div>
+                <div id="error1"></div>
+                <label id="lname" for="lastname">Last Name:</label>
+                <div class="input-container">
+                    <i class="fas fa-signature icon"></i>
+                    <input type="text" class="input-field" id="lastname" pattern="[A-Za-z]{2,}" maxlength="20" title="Insert your last name" required>
+                </div>
+                <div id="error2"></div>
+                <label id="mail" for="email">Email:</label>
+                <div class="input-container">
+                    <i class="fas fa-envelope-square icon"></i>
+                    <input type="email" class="input-field" id="email" pattern="[^\s]+@[^\s]+" maxlength="100" title="Insert your email address" required>
+                </div>
+                <div id="error3"></div>
+                <label for="tel">Phone:</label>
+                <div class="input-container">
+                    <i class="fas fa-phone icon"></i>
+                    <input type="tel" id="tel" pattern="^[0-9]{4}-[0-9]{3}-[0-9]{3}">
+                </div>
+                <div id="error4"></div>
+                <label for="address">Address:</label>
+                <div class="input-container">
+                    <i class="fas fa-home icon"></i>
+                    <input id="address" type="text">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Password</legend>
+                <label id="pw1" for="password1">Password:</label>
+                <div class="input-container">
+                    <i class="fas fa-key icon"></i>
+                    <input type="password" id="password1" onblur="checkEquity()" required>
+                </div>
+                <label id="pw2" for="password2">Password Confirm:</label>
+                <div class="input-container">
+                    <i class="fas fa-key icon"></i>
+                    <input type="password" id="password2" onblur="checkEquity()" required>
+                </div>
+                <div id="error5"></div>
+                <button id="btn" type="button" onclick="revealPw()"><img id="img" src="images/eyeopen.png" alt=""></button>
+                <input type="button" id="reveal" value="Submit" onclick="formValidation()">
+            </fieldset>
+        </form>
+        <div id="error"></div>
+    </body>
+</html>

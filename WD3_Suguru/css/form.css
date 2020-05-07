@@ -1,0 +1,122 @@
+#Layer_1 {
+    width: 10%;
+    height: 10%;
+}
+
+form {
+    width: 30%;
+    margin: 0 auto;
+    display: grid;
+}
+
+label {
+    display: block;
+    width: 50%;
+    margin :2px auto;
+    text-align: center;
+}
+
+input {
+    display: block;
+    width: 90%;
+    margin : 5px auto;
+    text-align: center;
+    padding: 5px;
+    position: relative;
+}
+
+button {
+    display: block;
+    margin: 5% auto;
+    width: 20%;
+    background-color: lightblue;
+}
+
+img {
+    width: 20%;
+    height: 20%;
+}
+
+input:invalid {
+    background-color: pink;
+}
+
+input:valid {
+    background-color: lightgreen;
+}
+
+input[type="text"]:required, input[type="password"]:required {
+    border: 2px solid black;
+}
+
+input[type="button"] {
+    width: 30%;
+    margin: 20% auto;
+    font-size: large;
+}
+
+input:focus {
+    background-color: lightgray;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+  
+.icon {
+    color: black;
+    width: 8%;
+    text-align: center;
+    position: absolute;
+    z-index: 100;
+}
+
+#fname::after, #lname::after, #mail::after, #pw1::after, #pw2::after {
+    content: " (Required)";
+    color: red;
+}
+
+a {
+    display: block;
+    text-align: center;
+}
+
+video {
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    left: 30%;
+}
+
+.help-video:hover video{
+    display: block;
+}
+
+#error1, #error2, #error3, #error4 {
+    margin-bottom: 20px;
+}
+
+
+/* media Query */
+
+@media (max-width: 540px) {
+    form {
+        width: 100%;
+        margin: 0 auto;
+    }
+    label {
+        display: none;
+    }
+    input:optional {
+        display: none;
+    }
+    input[type="button"] {
+        display: block;
+    }
+    .fa-phone, .fa-home {
+        display: none;
+    }
+}
